@@ -16,7 +16,7 @@
 
 # Not currently used
 title: S2Geometry
-email: s2geometry@googlegroups.com
+email: s2geometry-io@googlegroups.com
 description: The s2geometry.io website
 
 # The base hostname & protocol for your site, e.g. http://example.com
@@ -28,7 +28,6 @@ baseurl: ""
 
 # host: 0.0.0.0 is required for local development.
 host: 0.0.0.0
-port: 4001
 
 # Build settings
 markdown: kramdown
