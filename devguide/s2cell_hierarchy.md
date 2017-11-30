@@ -47,7 +47,7 @@ and consists of six Hilbert curves linked together to form a single
 continuous loop over the entire sphere.  Here is an illustration of the
 S2 curve after 5 levels of subdivision:
 
-[![](/img/s2curve-small.gif)](s2curve-large.gif)
+[![](/img/s2curve-small.gif)](/img/s2curve-large.gif)
 
 The yellow curve is an approximation of the S2 space-filling curve.  It
 is a single continuous loop with a fractal structure such that it
