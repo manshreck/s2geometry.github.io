@@ -27,12 +27,12 @@ as follows:
     }
 
 This example uses `S2Testing::RandomPoint()` to generate points that are
-randomly distributed over the Earth.  Note that in the S2 library, [points are
-represented as unit-length
-vectors](overview.md#unit-vectors-vs-latitudelongitude-pairs) (the
-[`S2Point`](basic_types.md#s2point) class), rather than as latitude-longitude
-pairs.  You can convert latitude-longitude pairs to `S2Point` values using the
-[`S2LatLng`](basic_types.md#s2latlng) class, like this:
+randomly distributed over the Earth.  Note that in the S2 library,
+[points are represented as unit-length vectors](overview.md#unit-vectors-vs-latitudelongitude-pairs)
+(the [`S2Point`](basic_types.md#s2point) class), rather than as
+latitude-longitude pairs.  You can convert latitude-longitude pairs to
+`S2Point` values using the [`S2LatLng`](basic_types.md#s2latlng) class,
+like this:
 
     S2Point point(S2LatLng::FromDegrees(lat_degrees, lng_degrees));
 
@@ -119,8 +119,8 @@ attributes.  Each document is converted into a collection of *index terms*
 (e.g., significant words or phrases), which are gathered into an *inverted
 index* that maps each term to a list of documents where that term occurs.
 (For a comprehensive introduction to information retrieval, see [Introduction
-to Information Retrieval](https://nlp.stanford.edu/IR-book/) by Christopher
-D. Manning et al., Cambridge University Press, 2008.)
+to Information Retrieval](https://nlp.stanford.edu/IR-book/){:target="_blank"}
+by Christopher D. Manning et al., Cambridge University Press, 2008.)
 
 Our goal is not to solve the information retrieval problem in this tutorial,
 but rather just to show to add spatial data to an existing system.  S2 defines

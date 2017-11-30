@@ -4,6 +4,7 @@ title: Overview
 
 S2 is a library for spherical geometry that aims to have the same
 robustness, flexibility, and performance as the very best planar
+robustness, flexibility, and performance as the very best planar
 geometry libraries.
 
 ## Spherical Geometry
@@ -129,7 +130,8 @@ On the other hand, the following are outside the scope of S2:
     libraries to choose from.)
 
 *   Conversions to/from common GIS formats.  (To read such formats, use
-    an external library such as [OGR](http://gdal.org/1.11/ogr/).)
+    an external library such as
+    [OGR](http://gdal.org/1.11/ogr/){:target="_blank"}.)
 
 ## Layered Design
 

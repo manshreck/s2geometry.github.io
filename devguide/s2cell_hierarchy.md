@@ -40,15 +40,14 @@ they are used for spatial indexing (compared to other methods of
 numbering the cells).
 
 In particular, the S2 cells are ordered sequentially along a
-[space-filling
-curve](https://en.wikipedia.org/wiki/Space-filling_curve) (a type of
-[fractal](https://en.wikipedia.org/wiki/Fractal)).  The particular
-curve used by S2 is called the *S2 space-filling curve*, and consists
-of six Hilbert curves linked together to form a single continuous loop
-over the entire sphere.  Here is an illustration of the S2 curve after
-5 levels of subdivision:
+[space-filling curve](https://en.wikipedia.org/wiki/Space-filling_curve){:target="_blank"}
+(a type of [fractal](https://en.wikipedia.org/wiki/Fractal){:target="_blank"}).
+The particular curve used by S2 is called the *S2 space-filling curve*,
+and consists of six Hilbert curves linked together to form a single
+continuous loop over the entire sphere.  Here is an illustration of the
+S2 curve after 5 levels of subdivision:
 
-[![](/img/s2curve-small.gif)](s2curve-large.gif)
+[![](/img/s2curve-small.gif)](/img/s2curve-large.gif)
 
 The yellow curve is an approximation of the S2 space-filling curve.  It
 is a single continuous loop with a fractal structure such that it
@@ -79,9 +78,11 @@ have infinite length.
 
 It is most easily defined as the limit of an iterative process that builds a
 more detailed approximation of the curve at each step.  Here is a part of the
-first page of [Hilbert's 1891 paper defining his
-curve](http://www.digizeitschriften.de/dms/img/?PPN=PPN235181684_0038&amp;DMDID=dmdlog40)
-(cf. [Mark McClure](https://math.stackexchange.com/users/21361/mark-mcclure)):
+first page of
+[Hilbert's 1891 paper defining his curve](http://www.digizeitschriften.de/dms/img/?PPN=PPN235181684_0038&amp;DMDID=dmdlog40){:target="_blank"}
+(cf.
+[Mark McClure](https://math.stackexchange.com/users/21361/mark-mcclure){:target="_blank"}
+):
 
 ![Figures from Hilbert's 1891 paper](/img/hilbert-figure.gif)
 
@@ -1005,16 +1006,17 @@ Triangular Mesh (http://skyserver.org/HTM) framework:
     in a spatial index of some sort, a space-filling curve minimizes the number
     of times that we switch from one index element to the next.  This helps
     cache performance (including non-local caches such as
-    [BigTable](https://cloud.google.com/bigtable)).  A linear scan through HTM
-    triangles also has fairly good locality of reference due to the hierarchical
-    structure, but it does not define a space-filling curve (due to the triangle
-    ordering chosen by its inventors) and therefore the locality of reference is
-    not as good. (At any given level, the HTM path is about 2.2 times longer
-    than the corresonding S2CellId path.)
+    [BigTable](https://cloud.google.com/bigtable){:target="_blank"}). 
+    A linear scan through HTM triangles also has fairly good locality of
+    reference due to the hierarchical structure, but it does not define a
+    space-filling curve (due to the triangle ordering chosen by its inventors)
+    and therefore the locality of reference is not as good. (At any given
+    level, the HTM path is about 2.2 times longer than the corresonding
+    S2CellId path.)
 
 Another alternative is HEALPix
-[http://www.eso.org/science/healpix](http://www.eso.org/science/healpix). The
-main advantage of HEALPix is that it is suitable for calculations involving
+[http://www.eso.org/science/healpix](http://www.eso.org/science/healpix){:target="_blank"}.
+The main advantage of HEALPix is that it is suitable for calculations involving
 spherical harmonics. This isn't relevant to any of our current applications, and
 the scheme otherwise has several disadvantages from our point of view (e.g. cell
 boundaries are not geodesics, base structure is more complicated).
