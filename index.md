@@ -15,7 +15,7 @@ library represents all data on a three-dimensional sphere
 (similar to a globe). This makes it possible to build a worldwide
 geographic database with no seams or singularities, using a
 single coordinate system, and with low distortion everywhere 
-ompared to the true shape of the Earth. While the Earth is
+compared to the true shape of the Earth. While the Earth is
 not quite spherical, it is much closer to being a sphere
 than it is to being flat!
 
