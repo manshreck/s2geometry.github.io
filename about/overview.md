@@ -4,7 +4,6 @@ title: Overview
 
 S2 is a library for spherical geometry that aims to have the same
 robustness, flexibility, and performance as the very best planar
-robustness, flexibility, and performance as the very best planar
 geometry libraries.
 
 ## Spherical Geometry
