@@ -18,7 +18,7 @@ the Quickstart:
 
 Ready for More? 
  
-* Read about [S2 Cells](s2cell_hierarchy)
-* Learn about the [Basic Types](basic_types)
-* Understand the main [S2ShapeIndex](s2shapeindex) Class
-* Discover [Finding Nearby Edges](s2closestedgequery)
+* Read about [S2 Cells](/devguide/s2cell_hierarchy)
+* Learn about the [Basic Types](/devguide/basic_types)
+* Understand the main [S2ShapeIndex](/devguide/s2shapeindex) Class
+* Discover [Finding Nearby Edges](/devguide/s2closestedgequery)
