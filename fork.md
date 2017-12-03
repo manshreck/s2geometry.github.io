@@ -1,5 +1,5 @@
 ---
-title: Fork S2
+title: Get S2
 layout: default
 ---
 
@@ -15,4 +15,5 @@ Ported Subsets:
 * <a href="https://github.com/golang/geo" target="_blank">Go S2 Library</a>
 * <a href="https://github.com/google/s2geometry/tree/master/src/python" target="_blank">Python S2 Library</a>
 
-Fork any of these repositories to get started working with S2!
+Clone any of these repositories to get started working with S2! You may wish
+to fork these repositories if you wish to make contributions (where applicable).
