@@ -25,7 +25,7 @@ If you want to learn more about the library, start by reading the
 introduction to the [basic types](devguide/basic_types)
 
 **<a href="https://github.com/google/s2geometry" target="_blank">
-Fork S2 on GitHub</a>**
+Get S2 on GitHub</a>**
 
 ## S2 Features
 
