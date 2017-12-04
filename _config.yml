@@ -35,7 +35,7 @@ theme: minima
 
 # Minima Navigation Config
 header_pages:
-  - fork.md
+  - getS2.md
   - about/index.md
   - devguide/index.md
   - community/index.md
