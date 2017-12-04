@@ -25,10 +25,10 @@ as follows:
 
 This example uses `S2Testing::RandomPoint()` to generate points that are
 randomly distributed over the Earth.  Note that in the S2 library,
-[points are represented as unit-length vectors](/about/overview.md#unit-vectors-vs-latitudelongitude-pairs)
-(the [`S2Point`](/devguide/basic_types.md#s2point) class), rather than as
+[points are represented as unit-length vectors](/about/overview#unit-vectors-vs-latitudelongitude-pairs)
+(the [`S2Point`](/devguide/basic_types#s2point) class), rather than as
 latitude-longitude pairs.  You can convert latitude-longitude pairs to
-`S2Point` values using the [`S2LatLng`](/devguide/basic_types.md#s2latlng) 
+`S2Point` values using the [`S2LatLng`](/devguide/basic_types#s2latlng) 
 class, like this:
 
     S2Point point(S2LatLng::FromDegrees(lat_degrees, lng_degrees));
@@ -174,7 +174,7 @@ radius to an `S1Angle`:
 
 Our query region is a disc centered around a target point.  On the sphere, a
 disc-shaped region such as this one is called a *spherical cap*
-([`S2Cap`](/devguide/basic_types.md#s2cap)):
+([`S2Cap`](/devguide/basic_types#s2cap)):
 
     S2Cap query_region(S2Testing::RandomPoint(), radius);
 
@@ -287,12 +287,12 @@ As its name implies, `S2RegionTermIndexer` supports indexing and querying any
 type of `S2Region`.  In addition to points and discs (`S2Cap`), other useful
 `S2Region` types include:
 
-*   [`S2LatLngRect`](/devguide/basic_types.md#s2latlngrect) - a rectangle in
+*   [`S2LatLngRect`](/devguide/basic_types#s2latlngrect) - a rectangle in
     latitude-longitude coordinates.
 *   [`S2Polyline`](/devguide/basic_types#s2polyline) - a polyline.
 *   [`S2Polygon`](/devguide/basic_types#s2polygon) - a polygon (can have holes
     and multiple shells).
-*   [`S2CellUnion`](/devguide/s2cell_hierarchy.md#s2cellunion) - a region
+*   [`S2CellUnion`](/devguide/s2cell_hierarchy#s2cellunion) - a region
     approximated as a collection of `S2CellIds`.
 *   `S2ShapeIndexRegion` - an arbitrary collection of points,
     polylines, and polygons.
@@ -326,7 +326,7 @@ their features:
 *   Requires an external system for storing and retrieving index terms.
 
 Another useful indexing class not described here is
-[`S2ShapeIndex`](/devguide/s2shapeindex.md), which indexes an arbitrary
+[`S2ShapeIndex`](/devguide/s2shapeindex), which indexes an arbitrary
 collection of points, polylines and polygons (collectively known as *shapes*).
 `S2ShapeIndex` is the most generally useful of these classes for working with
 geometry in memory.  It compares to the classes above as follows:
@@ -338,7 +338,7 @@ geometry in memory.  It compares to the classes above as follows:
 *   Useful query classes include:
     *   `S2ContainsPointQuery` - returns the shape(s) that contain a given
         point.
-    *   [`S2ClosestEdgeQuery`](/devguide/s2closestedgequery.md) - returns
+    *   [`S2ClosestEdgeQuery`](/devguide/s2closestedgequery) - returns
 	    the closest edges to a given point, polyline, polygon, or geometry 
 		collection.
     *   `S2CrossingEdgeQuery` - returns the edge(s) that cross a given edge.
