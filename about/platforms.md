@@ -15,7 +15,6 @@ S2 Geometry Library.
 * [glog logging module](https://github.com/google/glog){:target="_blank"}
 * [OpenSSL](https://github.com/openssl/openssl){:target="_blank"} (for its bignum library)
 * [googletest testing framework](https://github.com/google/googletest){:target="_blank"}
-  (to build tests and example programs)
 
 Note: on MacOSX, XCode requires command-line tools, which can be installed
 with:
