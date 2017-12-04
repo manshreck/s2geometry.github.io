@@ -17,7 +17,14 @@ S2 Geometry Library.
 * [googletest testing framework](https://github.com/google/googletest){:target="_blank"}
   (to build tests and example programs)
 
-On Ubuntu, all of these can be installed via apt-get:
+Note: on MacOSX, XCode requires command-line tools, which can be installed
+with:
+
+```
+xcode-select --install
+```
+`
+On Ubuntu, all of these packages can be installed via apt-get:
 
 ```
 sudo apt-get install cmake libgflags-dev libgoogle-glog-dev libgtest-dev openssl
