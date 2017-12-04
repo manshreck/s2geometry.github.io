@@ -66,7 +66,7 @@ Notable features of the library include:
     * [Covering Examples](devguide/examples/coverings) 
     
 * Resources
-     * The [S2 Earthcube](resources/earthcube/)
+     * The [S2 Earthcube](resources/earthcube)
      * [S2Cell Statistics](resources/s2cell_statistics)
     
 
