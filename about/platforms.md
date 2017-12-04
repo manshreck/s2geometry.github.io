@@ -38,8 +38,8 @@ On macOS, use [MacPorts](http://www.macports.org/){:target="_blank"}:
 Do not install `gtest` from MacPorts; instead download
 [release 1.8.0](https://github.com/google/googletest/releases/tag/release-1.8.0){:target="_blank"}
 , unpack, and substitute `cmake`
-`-DGTEST_ROOT=.../googletest-release-1.8.0/googletest`
-in the build instructions below
+`-DGTEST_ROOT=/<i>path_to_googletest</i>/googletest-release-1.8.0/googletest`
+in the build instructions below.
 
 Thorough testing has only been done on Ubuntu 14.04.3 and macOS 10.12.
 
@@ -53,7 +53,9 @@ unzip [path to ZIP file]/s2geometry-master.zip
 cd s2geometry-master
 mkdir build
 cd build
-\# You can omit -DGTEST_ROOT to skip tests; see above for macOS.
+\# You can omit -DGTEST_ROOT to skip tests; 
+\# Note: DGTEST_ROOT must be set to an absolute path. See above for macOS.
+\# which should point to your googletest installation directory.
 cmake -DGTEST_ROOT=/usr/src/gtest ..
 make
 make test  # If GTEST_ROOT specified above.
