@@ -37,9 +37,9 @@ On macOS, use [MacPorts](http://www.macports.org/){:target="_blank"}:
 
 Do not install `gtest` from MacPorts; instead download
 [release 1.8.0](https://github.com/google/googletest/releases/tag/release-1.8.0){:target="_blank"}
-, unpack, and substitute `cmake`
-`-DGTEST_ROOT=/<i>path_to_googletest</i>/googletest-release-1.8.0/googletest`
-in the build instructions below.
+and unpack it. In the build instructions below, also invoke `cmake` using
+the absolute path of this googletest installation directory (E.g.
+<code>-DGTEST_ROOT=/<i>install_directory</i>/googletest-release-1.8.0/googletest</code>.)
 
 Thorough testing has only been done on Ubuntu 14.04.3 and macOS 10.12.
 
