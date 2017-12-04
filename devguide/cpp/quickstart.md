@@ -2,6 +2,9 @@
 title: Quick Start
 ---
 
+(Before going through this Quickstart, make sure you've set up S2 according to
+the instructions in the  [Platforms Guide](/about/platforms)).
+
 Suppose that we have a few terabytes (or petabytes) of geographic data, and we
 want to be able to query it efficiently.  This brief tutorial shows how the S2
 library is useful for solving this problem.

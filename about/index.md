@@ -2,11 +2,15 @@
 title: About S2
 ---
 
-This guide provides conceptual background for working with the
-S2 Geometry Library.
+This guide provides background information for starting work with
+the S2 Geometry Library.
 
-If you haven't already done so, make sure you read our
-[Overview](/about/overview).
+*   The S2 [Platforms Guide](platforms) denotes the prerequisites
+    for installation of S2 on your system. This guide also
+	provides build instructions for S2.
+*   The S2 [Overview](overview) provides a conceptual introduction
+    to S2, and should be read before diving into the developer
+	guide.
 
 S2 consists of source code repositories for C++ and Java. Upon
 completing the overview, you will probably want to run through

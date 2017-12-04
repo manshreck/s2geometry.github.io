@@ -17,3 +17,5 @@ Ported Subsets:
 
 Clone any of these repositories to get started working with S2! You may wish
 to fork these repositories if you wish to make contributions (where applicable).
+
+Consult the [Platforms Guide](/about/platforms) for installation instructions.
