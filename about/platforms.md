@@ -69,7 +69,7 @@ Processing triggers for libc-bin (2.19-0ubuntu6.13) ...
 2\. (Optional) Install SWIG
 
 If you will be developing in Python, you should also install the
-[SWIG](www.swig.org) library). Most Python code will
+[SWIG](www.swig.org){:target = "_blank"} library). Most Python code will
 invoke the C++ code through this library.
 
 <pre>
@@ -116,7 +116,7 @@ directory as you will need to point CMake to it.)
 3\. (Optional) Install SWIG
 
 If you will be developing in Python, you should also install the
-[SWIG](www.swig.org) library). Most Python code will
+[SWIG](www.swig.org){:target = "_blank"} library). Most Python code will
 invoke the C++ code through this library.
 
 <pre>
