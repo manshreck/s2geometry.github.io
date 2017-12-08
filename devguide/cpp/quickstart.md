@@ -2,12 +2,16 @@
 title: Quick Start
 ---
 
-(Before going through this Quickstart, make sure you've set up S2 according to
-the instructions in the  [Platforms Guide](/about/platforms)).
-
 Suppose that we have a few terabytes (or petabytes) of geographic data, and we
 want to be able to query it efficiently.  This brief tutorial shows how the S2
 library is useful for solving this problem.
+
+## Prerequisites
+
+Before going through this Quickstart, first makes sure your development
+environment satisfies our [platform requirements](/about/platforms) and
+follow the installation instructions in the
+[S2 Install Guide](/about/install).
 
 ## S2PointIndex
 
@@ -123,11 +127,11 @@ to Information Retrieval](https://nlp.stanford.edu/IR-book/){:target="_blank"}
 by Christopher D. Manning et al., Cambridge University Press, 2008.)
 
 Our goal is not to solve the information retrieval problem in this tutorial,
-but rather just to show to add spatial data to an existing system.  S2 defines
-a special class called `S2RegionTermIndexer` that is designed to deal with the
-problem of converting spatial data into index terms, which can then be indexed
-along with the other document information.  (In fact the method described here
-can be used with any key-value storage system.)
+but rather just to show how to add spatial data to an existing system. S2
+defines a special class called `S2RegionTermIndexer` that is designed to deal
+with the problem of converting spatial data into index terms, which can then
+be indexed along with the other document information. (In fact the method
+described here can be used with any key-value storage system.)
 
 To keep things simple, let's assume that each document consists of a single
 point (with no other information).  Each document is assigned a "document id"
