@@ -16,9 +16,9 @@ Running the S2 code requires the following:
 * A compatible C++ compiler *supporting at least C++11*, such as
   [g++](https://gcc.gnu.org/){:target="_blank"} >= 4.7.
 * Installation of the following libraries:
-    * [gflags command line flags](https://github.com/gflags/gflags){:target="_blank"}
-    * [glog logging module](https://github.com/google/glog){:target="_blank"}
     * [OpenSSL](https://github.com/openssl/openssl){:target="_blank"} (for its bignum library)
+    * [gflags command line flags](https://github.com/gflags/gflags){:target="_blank"} (optional, disabled by default)
+    * [glog logging module](https://github.com/google/glog){:target="_blank"} (optional, disabled by default)
     * [googletest testing framework](https://github.com/google/googletest){:target="_blank"}
     * [SWIG](https://github.com/swig/swig) (optional, for Python interface)
 * [Git](https://git-scm.com/) for interacting with the S2 source code
