@@ -1,6 +1,4 @@
----
-title: S2 Cells
----
+# S2 Cells
 
 The S2 library defines a framework for decomposing the unit sphere into a
 hierarchy of *cells*.  Each cell is a quadrilateral bounded by four geodesics.
@@ -9,7 +7,7 @@ cube onto the unit sphere, and lower levels are obtained by subdividing each
 cell into four children recursively.  For example, the following image shows
 two of the six *face cells*, one of which has been subdivided several times:
 
-![](/img/s2hierarchy.gif)
+![](img/s2hierarchy.gif)
 
 Notice that the cell edges appear to be curved; this is because they are
 *spherical geodesics*, i.e., straight lines on the sphere (similar to the
@@ -20,7 +18,7 @@ cell has been subdivided (starting with a face cell).  Cells levels range from
 0 to 30.  The smallest cells at level 30 are called *leaf cells*; there are
 6 * 4<sup>30</sup> of them in total, each about 1cm across on the Earth's
 surface.  (Details on the cell sizes at each level can be found on the [S2
-Cell Statistics page](/resources/s2cell_statistics).)
+Cell Statistics page](../resources/s2cell_statistics).)
 
 The S2 hierarchy is useful for spatial indexing and for approximating regions
 as a collection of cells.  Cells can be used to represent both points and
@@ -28,7 +26,7 @@ regions: points are generally represented as leaf cells, while regions are
 represented as collections of cells at any level(s).  For example, here
 is an approximation of Hawaii as a collection of 22 cells:
 
-![](/img/hawaii.gif)
+![](examples/img/hawaii.gif)
 
 ## S2CellId Numbering
 
@@ -47,7 +45,7 @@ and consists of six Hilbert curves linked together to form a single
 continuous loop over the entire sphere.  Here is an illustration of the
 S2 curve after 5 levels of subdivision:
 
-[![](/img/s2curve-small.gif)](/img/s2curve-large.gif)
+[![](img/s2curve-small.gif)](img/s2curve-large.gif)
 
 The yellow curve is an approximation of the S2 space-filling curve.  It
 is a single continuous loop with a fractal structure such that it
@@ -84,7 +82,7 @@ first page of
 [Mark McClure](https://math.stackexchange.com/users/21361/mark-mcclure){:target="_blank"}
 ):
 
-![Figures from Hilbert's 1891 paper](/img/hilbert-figure.gif)
+![Figures from Hilbert's 1891 paper](img/hilbert-figure.gif)
 
 As you can see, the first iteration divides the unit square into 4
 smaller squares.  The curve visits those squares in a particular order
@@ -123,7 +121,7 @@ figure 1).  The next group of digits is "00", meaning that we choose subsquare
 0 during the second iteration (corresponding to square 9 in Hilbert's figure
 2).  Continuing in this way, for s = 0.5 the result looks something like this:
 
-![](/img/hilbert-cell-center.gif)
+![](img/hilbert-cell-center.gif)
 
 In the limit, this process converges to a point that is exactly at the
 center of the square (the green dot in the figure).  This implies that
@@ -161,16 +159,16 @@ of the S2 curve on the unit cube (before projecting it to the sphere).
 The cube has been unfolded and flattened, and shows the first 4 levels
 of the S2 curve subdivision:
 
-![](/img/s2cell_global.jpg)
+![](img/s2cell_global.jpg)
 
 ([Larger images of the individual faces can be found
-here.](/img/earthcube.md)) Note that the traversal order of the
+here.](../resources/earthcube.md)) Note that the traversal order of the
 odd-numbered faces is the mirror image of the even-numbered faces.
 
 When the cube is mapped onto the unit sphere, the result is the curve
 shown earlier:
 
-![](/img/s2curve-tiny.gif)
+![](img/s2curve-tiny.gif)
 
 ### S2CellId Numbering (again)
 
@@ -263,7 +261,7 @@ The purpose of the nonlinear (face, s, t) &rarr; (face, u, v) transformation
 is to make the cells roughly the same size on the sphere.  This can be
 visualized as follows:
 
-[![](/img/xyz_to_uv_to_st.gif){height="400"}](xyz_to_uv_to_st.gif)
+[![](img/xyz_to_uv_to_st.gif){height="400"}](img/xyz_to_uv_to_st.gif)
 
 This diagram shows a one-dimensional slice of cube face.  Starting from the
 right-hand size, an s- or t-coordinate in the range [0,1] is transformed
@@ -284,12 +282,12 @@ on all six faces.
 
 ## S2CellId
 
-The `S2CellId` class is a thin wrapper over [the 64-bit S2CellId
-number](#s2cellid-number) that provides methods for navigating the cell
-hierarchy (finding parents, children, containment tests, etc).  Since leaf
-cells are often used to represent points on the unit sphere, the `S2CellId`
-class also provides methods for converting directly to and from an `S2Point`.
-Here are its methods:
+The `S2CellId` class is a thin wrapper over
+[the 64-bit S2CellId number](#s2cellid-numbering) that provides methods for
+navigating the cell hierarchy (finding parents, children, containment tests,
+etc).  Since leaf cells are often used to represent points on the unit sphere,
+the `S2CellId` class also provides methods for converting directly to and from
+an `S2Point`. Here are its methods:
 
 ```c++
 class S2CellId {
@@ -888,7 +886,7 @@ covering as well as a limit on the final output size.
 The default `max_cells()` value of 8 is a reasonable point on the
 precision/performance tradeoff curve for caps, but you may want to use higher
 values for odd-shaped regions, such as long skinny lat-lng rects. [Here are some
-examples of approximations.](/devguide/examples/coverings)
+examples of approximations.](examples/coverings)
 
 Here is the interface of `S2RegionCoverer`:
 
@@ -1004,15 +1002,14 @@ Triangular Mesh (http://skyserver.org/HTM) framework:
 *   A linear scan of a set of S2CellIds follows a space-filling curve, which
     maximizes locality of reference. For example, if each cell id is looked up
     in a spatial index of some sort, a space-filling curve minimizes the number
-    of times that we switch from one index element to the next.  This helps
-    cache performance (including non-local caches such as
-    [BigTable](https://cloud.google.com/bigtable){:target="_blank"}). 
-    A linear scan through HTM triangles also has fairly good locality of
-    reference due to the hierarchical structure, but it does not define a
-    space-filling curve (due to the triangle ordering chosen by its inventors)
-    and therefore the locality of reference is not as good. (At any given
-    level, the HTM path is about 2.2 times longer than the corresonding
-    S2CellId path.)
+    of times that we switch from one index element to the next. This helps cache
+    performance (including non-local caches such as
+    [BigTable](https://cloud.google.com/bigtable){:target="_blank"}). A linear
+    scan through HTM triangles also has fairly good locality of reference due to
+    the hierarchical structure, but it does not define a space-filling curve
+    (due to the triangle ordering chosen by its inventors) and therefore the
+    locality of reference is not as good. (At any given level, the HTM path is
+    about 2.2 times longer than the corresonding S2CellId path.)
 
 Another alternative is HEALPix
 [http://www.eso.org/science/healpix](http://www.eso.org/science/healpix){:target="_blank"}.
@@ -1027,6 +1024,10 @@ projecting the six faces of a cube onto the unit sphere, and subdivides each
 face in a quadtree fashion. However, it does not use a space-filling curve
 scheme for labelling the cells, the cell edges are not geodesics, and it uses a
 much more complicated projection scheme designed to minimize distortion.
+
+[^s2cell-locality]: Ideally the converse property would also be true (i.e., if
+    two cells are close together then their `S2CellIds` are also close
+    together), but unfortunately this turns out not to be possible.
 
 [^cell-center-parameters]: There are actually 3 different Hilbert curve
     parameters for the point (0.5, 0.5), corresponding to the fact that the

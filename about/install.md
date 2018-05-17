@@ -33,7 +33,7 @@ Running the S2 code requires the following:
     Git, consult the [Set Up Git](https://help.github.com/articles/set-up-git/)
     guide on GitHub.
 
-Installation instructions for the above components are [noted below](#install).
+Installation instructions for the above components are [noted below](#Install).
 
 <p class="note">
 Note: this installation guide uses CMake as the official build system for
@@ -46,7 +46,7 @@ Although you are free to use your own build system, most of the documentation
 within this guide will assume you are using
 [CMake](https://cmake.org/){:target="_blank"}.
 
-## Installation Instructions {#install}
+## Installation Instructions {#Install}
 
 Note: thorough testing has only been done on Ubuntu 14.04.3
 and MacOSX 10.12.
@@ -62,7 +62,7 @@ libraries from source.
 <pre>
 <b>$ sudo apt-get install libgflags-dev libgoogle-glog-dev libgtest-dev libssl-dev</b>
 Reading package lists... Done
-Building dependency tree       
+Building dependency tree
 Reading state information... Done
 ...
 After this operation, 3,090 kB of additional disk space will be used.
@@ -73,23 +73,12 @@ Processing triggers for libc-bin (2.19-0ubuntu6.13) ...
 <b>$</b>
 </pre>
 
-2\. (Optional) Install SWIG
-
-If you will be developing in Python, you should also install the
-[SWIG](http://www.swig.org){:target="_blank"} library). Most
-Python code will invoke the C++ code through this library.
-
-<pre>
-<b>$ sudo apt-get install swig</b>
-<b>$</b>
-</pre>
-
-3\. Install CMake
+2\. Install CMake
 
 <pre>
 <b>$ sudo apt-get install cmake</b>
 Reading package lists... Done
-Building dependency tree       
+Building dependency tree
 Reading state information... Done
 ...
 After this operation, 16.6 MB of additional disk space will be used.
@@ -112,7 +101,7 @@ Alternatively, you may build the dependent libraries from source.
 <b>$ sudo port install gflags google-glog openssl</b>
 
 # Homebrew
-<b>$ brew install gflags glog openssl</b>
+<b>$ sudo brew install gflags glog openssl</b>
 </pre>
 
 2\. Download Googletest
@@ -120,21 +109,7 @@ Alternatively, you may build the dependent libraries from source.
 and unpack it in a directory of your choosing. (Take note of this
 directory as you will need to point CMake to it.)
 
-3\. (Optional) Install SWIG
-
-If you will be developing in Python, you should also install the
-[SWIG](http://www.swig.org){:target="_blank"} library). Most Python code will
-invoke the C++ code through this library.
-
-<pre>
-# MacPorts
-<b>$ sudo port install swig</b>
-
-# Homebrew
-<b>$ brew install swig</b>
-</pre>
-
-4\. Install CMake
+3\. Install CMake
 
 <pre>
 # Note: XCode requires command-line tools, which can be installed with:
@@ -144,7 +119,7 @@ invoke the C++ code through this library.
 <b>$ sudo port install cmake</b>
 
 # Homebrew
-<b>$ brew install cmake</b>
+<b>$ sudo brew install cmake</b>
 </pre>
 
 ### Getting the S2 Code
@@ -177,7 +152,7 @@ Navigate into this directory.
 
 <p class="note">
 Alternatively, you can download an archive of the S2 library as a
-<a href="https://github.com/google/s2geometry/archive/master.zip">ZIP file</a>
+[ZIP file](https://github.com/google/s2geometry/archive/master.zip)
 and unzip it within your development directory.
 
 <pre>
@@ -196,22 +171,23 @@ are ready to build S2.
 <b>$ cd s2geometry  # or geometry-master if you installed from the ZIP file
 $ mkdir build
 $ cd build</b>
-# See Notes below on whether/when to use these cmake args
+# See Notes below.
 <b>$ cmake -DWITH_GFLAGS=ON -WITH_GTEST=ON \
 -DGTEST_ROOT=<i>googletest_root_dir</i> \
 -DOPENSSL_INCLUDE_DIR=<i>openssl_include_dir</i> ..</b>
--- Found OpenSSL: /usr/lib/libcrypto.dylib (found version "1.0.2m") 
+-- Found OpenSSL: /usr/lib/libcrypto.dylib (found version "1.0.2m")
 -- Looking for pthread.h
 -- Looking for pthread.h - found
 -- Looking for pthread_create
 -- Looking for pthread_create - found
--- Found Threads: TRUE  
+-- Found Threads: TRUE
+-- Could NOT find SWIG (missing: SWIG_EXECUTABLE SWIG_DIR)
 -- Found PythonInterp: /Library/Frameworks/Python.framework/Versions/2.7/bin/python (found version "2.7.11") 
 -- Found PythonLibs: /Library/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib (found version "2.7.11") 
-GTEST_ROOT: /absolute_path/googletest
+GTEST_ROOT: /Users/shreck/SOURCE/googletest
 -- Configuring done
 -- Generating done
--- Build files have been written to: /absolute_path/s2geometry-master/build
+-- Build files have been written to: /Users/shreck/SOURCE/s2geometry-master/build
 <b>$</b>
 </pre>
 
@@ -220,12 +196,10 @@ Notes:
 *   `-DWITH_GFLAGS` and `-DWITH_GTEST` may be omitted to avoid depending
     on those packages.
 *   `-DGTEST_ROOT` and `-DOPENSSL_INCLUDE_DIR` must be absolute paths.
-*   `-DGTEST_ROOT`is the root directory for GoogleTest (e.g. `/usr/src/gtest` on
-    Linux systems, or the directory you directly installed GoogleTest within,
-    such as <code>/Users/<i>username</i>/source/googletest</code> on MacOSX).
-*   MacOSX/Homebrew users may need to set `-DOPENSSL_INCLUDE_DIR` to enable
-    CMake to find your openssl `include` directory (e.g.
-    `/usr/local/homebrew/opt/openssl/include`).
+*   `-DGTEST_ROOT` is usually `/usr/src/gtest` on Linux systems; on
+    MacOSX use the directory where you installed GoogleTest.
+*   MacOSX/Homebrew users may need to set `-DOPENSSL_INCLUDE_DIR` to
+    enable CMake to find your openssl `include` directory.
 *   You can omit the `DGTEST_ROOT` flag to skip tests.
 
 2\. Make the S2 binary (and associated tests if `GTEST_ROOT` was

@@ -1,5 +1,8 @@
 ---
 title: Code of Conduct
+layout: community
+sidenav: side-nav-community.html
+type: markdown
 ---
 
 This Code of Conduct is adapted from the Contributor Covenant, version 1.4,
@@ -11,9 +14,9 @@ This Code of Conduct is licensed under the Creative Commons 4.0.
 In the interest of fostering an open and welcoming environment, we as
 contributors and maintainers pledge to making participation in our project and
 our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, gender identity and expression, level of experience,
-nationality, personal appearance, race, religion, or sexual identity and
-orientation.
+size, disability, ethnicity, gender identity and expression, level of
+experience, nationality, personal appearance, race, religion, or sexual identity
+and orientation.
 
 ## Our Standards
 
@@ -30,7 +33,7 @@ Examples of unacceptable behavior by participants include:
 
 * The use of sexualized language or imagery and unwelcome sexual
   attention or advances
-* Trolling, insulting/derogatory comments, and personal or political 
+* Trolling, insulting/derogatory comments, and personal or political
   attacks
 * Public or private harassment
 * Publishing others’ private information, such as a physical or

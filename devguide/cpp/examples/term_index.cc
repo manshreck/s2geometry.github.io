@@ -10,21 +10,29 @@
 // This example shows how to convert spatial data into index terms, which can
 // then be indexed along with the other document information.
 
+#include <cinttypes>
+#include <cstdint>
 #include <cstdio>
 #include <set>
-#include <unordered_map>
+// MOE:insert #include <unordered_map>
 #include <vector>
-#include <gflags/gflags.h>
-#include "s2/s2earth.h"
-#include "s2/s2cap.h"
-#include "s2/s2pointindex.h"
-#include "s2/s2region_term_indexer.h"
-#include "s2/s2testing.h"
+
+#include "base/commandlineflags.h"
+#include "geostore/geomodel/public/s2earth.h"
+#include "util/geometry/s2cap.h"
+#include "util/geometry/s2point_index.h"
+#include "util/geometry/s2region_term_indexer.h"
+#include "util/geometry/s2testing.h"
+#include "util/gtl/node_hash_map.h"  // MOE:strip_line
 
 DEFINE_int32(num_documents, 10000, "Number of documents");
 DEFINE_int32(num_queries, 10000, "Number of queries");
 DEFINE_double(query_radius_km, 100, "Query radius in kilometers");
 
+// MOE:begin_strip
+using geostore::S2Earth;
+
+// MOE:end_strip
 // A prefix added to spatial terms to distinguish them from other index terms
 // (e.g. representing words or phrases).
 static const char kPrefix[] = "s2:";
@@ -42,7 +50,11 @@ int main(int argc, char **argv) {
 
   // We use a hash map as our inverted index.  The key is an index term, and
   // the value is the set of "document ids" where this index term is present.
+  // MOE:begin_strip
+  gtl::node_hash_map<string, std::vector<int>> index;
+  /* MOE:end_strip_and_replace
   std::unordered_map<string, std::vector<int>> index;
+  */
 
   // Create an indexer suitable for an index that contains points only.
   // (You may also want to adjust min_level() or max_level() if you plan
@@ -64,7 +76,7 @@ int main(int argc, char **argv) {
       S1Angle::Radians(S2Earth::KmToRadians(FLAGS_query_radius_km));
 
   // Count the number of documents (points) found in all queries.
-  int64 num_found = 0;
+  int64_t num_found = 0;
   for (int i = 0; i < FLAGS_num_queries; ++i) {
     // Choose a random center for query.
     S2Cap query_region(S2Testing::RandomPoint(), radius);
@@ -89,7 +101,7 @@ int main(int argc, char **argv) {
     // Now do something with the results (in this example we just count them).
     num_found += result.size();
   }
-  std::printf("Found %lld points in %d queries\n",
+  std::printf("Found %" PRId64 " points in %d queries\n",
               num_found, FLAGS_num_queries);
   return  0;
 }

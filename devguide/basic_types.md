@@ -1,6 +1,6 @@
----
-title: Basic Types
----
+# Basic Types
+
+[TOC]
 
 ## S1Angle
 
@@ -800,11 +800,11 @@ class S2Loop final : public S2Region {
   // clockwise, and zero if the loop is a great circle.
   //
   // This quantity is also called the "geodesic curvature" of the loop.
-  double GetTurningAngle() const;
+  double GetCurvature() const;
 
-  // Return the maximum error in GetTurningAngle().  The return value is not
+  // Return the maximum error in GetCurvature().  The return value is not
   // constant; it depends on the loop.
-  double GetTurningAngleMaxError() const;
+  double GetCurvatureMaxError() const;
 
   // Return the distance from the given point to the loop interior.  If the
   // loop is empty, return S1Angle::Infinity().

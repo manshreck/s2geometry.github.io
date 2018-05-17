@@ -1,6 +1,4 @@
----
-title: The S2ShapeIndex Class
----
+# The S2ShapeIndex Class
 
 ## Overview
 
@@ -155,9 +153,6 @@ class S2Shape {
   // to be distinguished, e.g. it allows a point to be distinguished from a
   // polyline or polygon that has been simplified to a single point.
   virtual int dimension() const = 0;
-
-  // Convenience function that returns true if this shape has an interior.
-  bool has_interior() const { return dimension() == 2; }
 
   // A unique id assigned to this shape by S2ShapeIndex.  Shape ids are
   // assigned sequentially starting from 0 in the order shapes are added.
@@ -470,7 +465,7 @@ subset of shapes and edges that intersect that `S2CellId`.
 Here is a visualization of an `S2ShapeIndex` for a polygon bounded by a
 fractal curve:
 
-<img src="/img/s2shapeindex_example.png">
+<img src="img/s2shapeindex_example.png">
 
 Notice that the `S2ShapeIndex` has entries for cells that are entirely in
 the interior of the polygon.  The existence of such cells makes point
@@ -614,7 +609,7 @@ class S2ShapeIndex {
     // construction is cheap).
     void Init(const S2ShapeIndex* index, InitialPosition pos = UNPOSITIONED);
 
-    // Iterators are copyable and moveable.
+    // Iterators are copyable and movable.
     Iterator(const Iterator&);
     Iterator& operator=(const Iterator&);
     Iterator(Iterator&&);

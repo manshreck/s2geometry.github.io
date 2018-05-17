@@ -1,11 +1,13 @@
 ---
 title: Community
+layout: community
+sidenav: side-nav-community.html
+type: markdown
 ---
 
-S2 aims to have an active community of developers who are using, enhancing
-and building valuable integrations with other software projects. We’d love your
-help to improve and extend the project. You can reach us via the S2 Mailing
-List at
+S2 aims to have an active community of developers who are using, enhancing and
+building valuable integrations with other software projects. We’d love your help
+to improve and extend the project. You can reach us via the S2 Mailing List at
 <a href="https://groups.google.com/forum/#!forum/s2geometry-io" target="_blank">s2geometry-io@googlegroups.com</a>
 to start engaging with the project and its members.
 

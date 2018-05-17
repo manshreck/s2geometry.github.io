@@ -1,6 +1,4 @@
----
-title: Finding Nearby Edges
----
+# Finding Nearby Edges
 
 ## Overview
 
@@ -94,7 +92,7 @@ The return type of this method (`S1ChordAngle`) is an efficient
 representation of the distance between two points on the unit sphere.
 It can easily be converted to an `S1Angle` if desired (which measures
 angles in radians or degrees), and from there to an actual distance on
-the Earth spheroid.  (See also [Modeling Accuracy](#Modeling Accuracy).)
+the Earth spheroid.  (See also [Modeling Accuracy](#modeling-accuracy).)
 
 The most general query method is `FindClosestEdges`:
 
@@ -105,10 +103,10 @@ query options (described in the following section).  Each edge is
 returned in the form of a `Result` object that identifies the edge and
 specifies the distance to that edge:
 
-    struct Result {
-      Distance distance;  // The distance from the target to this edge.
-      int32 shape_id;     // Identifies an indexed shape.
-      int32 edge_id;      // Identifies an edge within the shape.
+    class Result {
+      Distance distance() const;  // The distance from the target to this edge.
+      int32 shape_id() const;     // Identifies an indexed shape.
+      int32 edge_id() const;      // Identifies an edge within the shape.
     };
 
 The `Distance` type is simply a thin wrapper around `S1ChordAngle` that
@@ -163,12 +161,12 @@ reused from one query to the next.
 
 The most important options are the following:
 
-    // Specifies that at most "max_edges" edges should be returned.
+    // Specifies that at most "max_results" edges should be returned.
     //
-    // REQUIRES: max_edges >= 1
+    // REQUIRES: max_results >= 1
     // DEFAULT: numeric_limits<int>::max()
-    int max_edges() const;
-    void set_max_edges(int max_edges);
+    int max_results() const;
+    void set_max_results(int max_results);
 
     // Specifies that only edges whose distance to the target is less than
     // "max_distance" should be returned.
@@ -190,7 +188,7 @@ Note that you will always want to set one of these options before
 calling `FindClosestEdges`, because otherwise all the edges in the
 entire `S2ShapeIndex` will be returned.  (This is not necessary
 when calling `FindClosestEdge`, `GetDistance`, or `IsDistanceLess`,
-because these methods all implicitly limit max_edges() to 1.)
+because these methods all implicitly limit max_results() to 1.)
 
 Another important option is `include_interiors()`, which determines
 whether distances are measured to the boundary and interior of polygons
@@ -208,11 +206,12 @@ inside a polygon has a distance of zero.  Note that in this situation
 there is no "closest edge" to return (since the minimum distance is
 attained at a point interior to the polygon), and therefore the
 `FindClosestEdge(s)` methods indicate this in the `Result` object(s) by
-setting `edge_id` to -1.  For example:
+setting `edge_id` to -1.  (Such results can be identified using the
+`is_interior()` method.)  For example:
 
     for (const auto& result : query.FindClosestEdges(&target)) {
-      if (result.edge_id < 0) {
-        ProcessInterior(result.shape_id);
+      if (result.is_interior()) {
+        ProcessInterior(result.shape_id());
       } else {
         ProcessEdge(result.shape_id, result.edge_id);
       }
@@ -235,7 +234,7 @@ predicate to stop the search as soon as it finds any edge whose
 distance is less than the given limit, rather than continuing to search
 for an edge that is even closer (which would be wasted effort).
 
-Note that this options only has an effect if `max_edges()` is also
+Note that this options only has an effect if `max_results()` is also
 specified; otherwise all edges closer than `max_distance()` will always
 be returned.
 
@@ -302,10 +301,10 @@ following:
     S2ClosestEdgeQuery::PointTarget target(target_point);
     auto result = query.FindClosestEdge(&target);
     double meters;
-    if (result.distance.is_infinity()) {
+    if (result.is_empty()) {
       // The index is empty.
       meters = std::numeric_limits<double>::infinity();
-    } else if (result.edge_id < 0) {
+    } else if (result.is_interior()) {
       // The target point is inside an indexed shape.
       meters = 0.0;
     } else {

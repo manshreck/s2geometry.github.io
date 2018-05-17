@@ -1,9 +1,7 @@
----
-title: S2 Cell Statistics
----
+# S2 Cell Statistics
 
 These are the approximate ranges of areas of
-[S2 cells](/about/overview.md#s2cell-hierarchy)
+[S2 cells](../about/overview.md#s2cell-hierarchy)
 at each level. The average size is that returned by `S2CellId.AverageArea()`,
 guaranteed to be within a factor of 1.5 of the high and low end of the range.
 Additionally, two random locations were chosen to provide example cell edge
