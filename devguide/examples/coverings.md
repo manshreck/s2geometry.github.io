@@ -1,4 +1,6 @@
-# S2 Covering Examples
+---
+title: S2 Covering Examples
+---
 
 Here are some examples of the "cell coverage" feature of the new
 spherical geometry package. We pick some point on the sphere, and create

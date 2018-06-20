@@ -1,10 +1,12 @@
-# Earth Cube
+---
+title: Earth Cube
+---
 
 The S2Cell hierarchy projects the Earth onto six top-level "face cells",
 which may be unwrapped and flattened into a stairstep arrangement. Below
 is a map of the six faces:
 
-![](img/s2cell_global.jpg)
+![](/devguide/img/s2cell_global.jpg)
 
 A single space-filling curve covers the entire globe, snaking from one
 face to the next. Note the traversal order in the odd-numbered faces is

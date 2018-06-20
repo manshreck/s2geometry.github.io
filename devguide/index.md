@@ -1,10 +1,12 @@
-# Developer Guide
+---
+title: Developer Guide
+---
 
 Welcome to the S2 Developer Guide! This guide provides conceptual and
 programming documentation for working with the S2 Geometry Library.
 
 If you haven't already done so, make sure you read our
-[Conceptual Overview](../about/overview).
+[Conceptual Overview](/about/overview).
 
 S2 consists of source code repositories for C++ and Java. Upon
 completing the overview, run through the Quickstart:

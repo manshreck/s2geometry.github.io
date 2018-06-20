@@ -1,4 +1,6 @@
-# The S2ShapeIndex Class
+---
+title: The S2ShapeIndex Class
+---
 
 ## Overview
 
@@ -23,8 +25,8 @@ combination of points, polylines, and polygons.  Such classes include:
 
 *   [`S2ContainsPointQuery`](#s2containspointquery): returns the shape(s)
     that contain a given point.
-*   [`S2ClosestEdgeQuery`](s2closestedgequery.md): returns the closest
-    edge(s) to a given point, edge, `S2CellId`, or `S2ShapeIndex`.
+*   [`S2ClosestEdgeQuery`](s2closestedgequery): returns the closest edge(s)
+    to a given point, edge, `S2CellId`, or `S2ShapeIndex`.
 *   `S2CrossingEdgeQuery`: returns the edge(s) that cross a given edge.
 *   `S2BooleanOperation`: computes boolean operations such as union, and
     boolean predicates such as containment.
@@ -76,10 +78,10 @@ few commonly used types of `S2Shape`:
 
 `S2LaxPolygonShape`
 : a polygon, possibly with degeneracies
-    
+
 `S2Polyline::Shape`
 : a polyline
-    
+
 `S2LaxPolylineShape`
 : a polyline, possibly with degeneracies
 
@@ -508,7 +510,7 @@ class S2ClippedShape {
 ```
 
 An `S2ShapeIndexCell` represents the set of `S2ClippedShapes` that
-intersect an `S2CellId': 
+intersect an `S2CellId':
 
 ```c++
 // S2ShapeIndexCell stores the index contents for a given S2CellId.
@@ -541,7 +543,7 @@ Finally, the `S2ShapeIndex` interface itself provides the following:
     Shapes can be retrieved by their *shape id*, an integer value that is
     assigned when the shape is first added to the index (starting at zero
     and increasing consecutively).
-    
+
 *   A random-access `Iterator` type that allows iterating and seeking over
     `S2CellIds` in the index.  For example, it can quickly determine the
     `S2CellId` (if any) containing a given point.
@@ -609,7 +611,7 @@ class S2ShapeIndex {
     // construction is cheap).
     void Init(const S2ShapeIndex* index, InitialPosition pos = UNPOSITIONED);
 
-    // Iterators are copyable and movable.
+    // Iterators are copyable and moveable.
     Iterator(const Iterator&);
     Iterator& operator=(const Iterator&);
     Iterator(Iterator&&);

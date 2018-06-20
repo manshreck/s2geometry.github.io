@@ -1,8 +1,5 @@
 ---
 title: S2 Installation
-layout: about
-sidenav: side-nav-about.html
-type: markdown
 ---
 
 This document lists the platform requirements and installation
@@ -62,7 +59,7 @@ libraries from source.
 <pre>
 <b>$ sudo apt-get install libgflags-dev libgoogle-glog-dev libgtest-dev libssl-dev</b>
 Reading package lists... Done
-Building dependency tree       
+Building dependency tree
 Reading state information... Done
 ...
 After this operation, 3,090 kB of additional disk space will be used.
@@ -89,7 +86,7 @@ Python code will invoke the C++ code through this library.
 <pre>
 <b>$ sudo apt-get install cmake</b>
 Reading package lists... Done
-Building dependency tree       
+Building dependency tree
 Reading state information... Done
 ...
 After this operation, 16.6 MB of additional disk space will be used.
@@ -200,14 +197,14 @@ $ cd build</b>
 <b>$ cmake -DWITH_GFLAGS=ON -WITH_GTEST=ON \
 -DGTEST_ROOT=<i>googletest_root_dir</i> \
 -DOPENSSL_INCLUDE_DIR=<i>openssl_include_dir</i> ..</b>
--- Found OpenSSL: /usr/lib/libcrypto.dylib (found version "1.0.2m") 
+-- Found OpenSSL: /usr/lib/libcrypto.dylib (found version "1.0.2m")
 -- Looking for pthread.h
 -- Looking for pthread.h - found
 -- Looking for pthread_create
 -- Looking for pthread_create - found
--- Found Threads: TRUE  
--- Found PythonInterp: /Library/Frameworks/Python.framework/Versions/2.7/bin/python (found version "2.7.11") 
--- Found PythonLibs: /Library/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib (found version "2.7.11") 
+-- Found Threads: TRUE
+-- Found PythonInterp: /Library/Frameworks/Python.framework/Versions/2.7/bin/python (found version "2.7.11")
+-- Found PythonLibs: /Library/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib (found version "2.7.11")
 GTEST_ROOT: /absolute_path/googletest
 -- Configuring done
 -- Generating done
@@ -273,4 +270,4 @@ Install the project...
 
 Congratulations! You've successfully installed S2, built the library, and run
 all of the tests! You're now ready to move on to the
-[C++ Quickstart](../devguide/cpp/quickstart).
+[C++ Quickstart](/devguide/cpp/quickstart).

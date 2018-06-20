@@ -1,8 +1,5 @@
 ---
 title: Overview
-layout: about
-sidenav: side-nav-about.html
-type: markdown
 ---
 
 S2 is a library for spherical geometry that aims to have the same

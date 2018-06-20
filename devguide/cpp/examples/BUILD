@@ -1,4 +1,6 @@
-# Copyright 2017 Google Inc. All Rights Reserved.
+---
+title: Copyright 2017 Google Inc. All Rights Reserved.
+---
 # Author: ericv@google.com (Eric Veach)
 #
 # Description:

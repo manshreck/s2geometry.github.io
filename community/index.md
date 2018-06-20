@@ -1,8 +1,5 @@
 ---
 title: Community
-layout: community
-sidenav: side-nav-community.html
-type: markdown
 ---
 
 S2 aims to have an active community of developers who are using, enhancing and
@@ -19,7 +16,7 @@ our community a harassment-free experience for everyone, regardless of age, body
 size, disability, ethnicity, gender identity and expression, level of
 experience, nationality, personal appearance, race, religion, or sexual identity
 and orientation. To faciliate this open environment, please review our
-<a href="{{ site.baseurl }}/community/code-of-conduct">code of conduct</a>.
+[Code of Conduct](code-of-conduct).
 
 ## Mailing List
 

@@ -1,4 +1,6 @@
-# S2 Cells
+---
+title: S2 Cells
+---
 
 The S2 library defines a framework for decomposing the unit sphere into a
 hierarchy of *cells*.  Each cell is a quadrilateral bounded by four geodesics.
@@ -18,7 +20,7 @@ cell has been subdivided (starting with a face cell).  Cells levels range from
 0 to 30.  The smallest cells at level 30 are called *leaf cells*; there are
 6 * 4<sup>30</sup> of them in total, each about 1cm across on the Earth's
 surface.  (Details on the cell sizes at each level can be found on the [S2
-Cell Statistics page](../resources/s2cell_statistics).)
+Cell Statistics page](/resources/s2cell_statistics).)
 
 The S2 hierarchy is useful for spatial indexing and for approximating regions
 as a collection of cells.  Cells can be used to represent both points and
@@ -162,8 +164,8 @@ of the S2 curve subdivision:
 ![](img/s2cell_global.jpg)
 
 ([Larger images of the individual faces can be found
-here.](../resources/earthcube.md)) Note that the traversal order of the
-odd-numbered faces is the mirror image of the even-numbered faces.
+here.](/resources/earthcube.md)) Note that the traversal
+order of the odd-numbered faces is the mirror image of the even-numbered faces.
 
 When the cube is mapped onto the unit sphere, the result is the curve
 shown earlier:

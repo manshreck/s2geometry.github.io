@@ -1,4 +1,6 @@
-# Finding Nearby Edges
+---
+title: Finding Nearby Edges
+---
 
 ## Overview
 

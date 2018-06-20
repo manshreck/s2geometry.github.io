@@ -1,23 +1,21 @@
 ---
 title: S2 Geometry
-layout: default
 ---
+
 
 <center><b>Welcome to the S2 Geometry Library!</b></center>
 <br/>
 
-![](/img/s2hierarchy.gif)
+![](devguide/img/s2hierarchy.gif)
 
-A unique feature of the S2 library is that unlike traditional
-geographic information systems, which represent data as flat
-two-dimensional projections (similar to an atlas), the S2
-library represents all data on a three-dimensional sphere
-(similar to a globe). This makes it possible to build a worldwide
-geographic database with no seams or singularities, using a
-single coordinate system, and with low distortion everywhere 
-compared to the true shape of the Earth. While the Earth is
-not quite spherical, it is much closer to being a sphere
-than it is to being flat!
+A unique feature of the S2 library is that unlike traditional geographic
+information systems, which represent data as flat two-dimensional projections
+(similar to an atlas), the S2 library represents all data on a three-dimensional
+sphere (similar to a globe). This makes it possible to build a worldwide
+geographic database with no seams or singularities, using a single coordinate
+system, and with low distortion everywhere compared to the true shape of the
+Earth. While the Earth is not quite spherical, it is much closer to being a
+sphere than it is to being flat!
 
 If you want to learn more about the library, start by reading the
 [Overview](about/overview) and
@@ -52,21 +50,23 @@ Notable features of the library include:
 
 ## Table of Contents
 
-* About S2
-    * [Overview](about/overview)
-    * [Platforms Guide](about/platforms)
+*   About S2
 
-* Tutorials
-    * [Quick Start](devguide/cpp/quickstart)
+    *   [Overview](about/overview)
+    *   [Platforms Guide](about/platforms)
 
-* Developer Guides
-    * [Basic Types](devguide/basic_types)
-    * [Finding Nearby Edges](devguide/s2closestedgequery)
-    * [S2Cell Hierarchy](devguide/s2cell_hierarchy)
-    * [Covering Examples](devguide/examples/coverings) 
-    
-* Resources
-     * The [S2 Earthcube](resources/earthcube)
-     * [S2Cell Statistics](resources/s2cell_statistics)
-    
+*   Tutorials
 
+    *   [Quick Start](devguide/cpp/quickstart)
+
+*   Developer Guides
+
+    *   [Basic Types](devguide/basic_types)
+    *   [Finding Nearby Edges](devguide/s2closestedgequery)
+    *   [S2Cell Hierarchy](devguide/s2cell_hierarchy)
+    *   [Covering Examples](devguide/examples/coverings)
+
+*   Resources
+
+    *   The [S2 Earthcube](resources/earthcube)
+    *   [S2Cell Statistics](resources/s2cell_statistics)

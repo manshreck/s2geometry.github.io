@@ -1,8 +1,5 @@
 ---
 title: Code of Conduct
-layout: community
-sidenav: side-nav-community.html
-type: markdown
 ---
 
 This Code of Conduct is adapted from the Contributor Covenant, version 1.4,

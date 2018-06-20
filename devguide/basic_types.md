@@ -1,4 +1,6 @@
-# Basic Types
+---
+title: Basic Types
+---
 
 [TOC]
 
