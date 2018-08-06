@@ -19,11 +19,11 @@
 
 #include "base/commandlineflags.h"
 #include "geostore/geomodel/public/s2earth.h"
+#include "third_party/absl/container/node_hash_map.h"
 #include "util/geometry/s2cap.h"
 #include "util/geometry/s2point_index.h"
 #include "util/geometry/s2region_term_indexer.h"
 #include "util/geometry/s2testing.h"
-#include "util/gtl/node_hash_map.h"  // MOE:strip_line
 
 DEFINE_int32(num_documents, 10000, "Number of documents");
 DEFINE_int32(num_queries, 10000, "Number of queries");
@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
   // We use a hash map as our inverted index.  The key is an index term, and
   // the value is the set of "document ids" where this index term is present.
   // MOE:begin_strip
-  gtl::node_hash_map<string, std::vector<int>> index;
+  absl::node_hash_map<string, std::vector<int>> index;
   /* MOE:end_strip_and_replace
   std::unordered_map<string, std::vector<int>> index;
   */
