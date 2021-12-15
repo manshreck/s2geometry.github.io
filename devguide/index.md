@@ -21,3 +21,5 @@ Ready for More? You probably want to read our programming concepts:
 * Learn about the [Basic Types](basic_types)
 * Understand the main [S2ShapeIndex](s2shapeindex) Class
 * Discover [Finding Nearby Edges](s2closestedgequery)
+* Understand why [Degenerate Geometry](degenerate_geometry) is useful
+* Read the [S2 C++ Style Guide](coding_style)

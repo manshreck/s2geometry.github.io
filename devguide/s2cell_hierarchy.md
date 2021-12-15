@@ -1034,7 +1034,7 @@ much more complicated projection scheme designed to minimize distortion.
 [^cell-center-parameters]: There are actually 3 different Hilbert curve
     parameters for the point (0.5, 0.5), corresponding to the fact that the
     Hilbert curve visits this point 3 times.  The three parameters are
-    0.1000..., 0.00101010..., and 0.11101010... (note that there is another
+    0.1000..., 0.00101010..., and 0.11010101... (note that there is another
     expansion 0.0111... which also visits this point, but it is numerically
     equal to 0.1000...).  This is similar to the fact that there are two
     decimal expansions of the number 1 (1.000... and 0.999...).  In any case,
